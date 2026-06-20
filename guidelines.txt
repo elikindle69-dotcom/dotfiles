@@ -1,0 +1,227 @@
+<div style="text-align:center;">'''Rice'''</div>
+
+= Rules: =
+
+* No switching compositors – do not switch from compositor to compositor, stay on Hyprland
+* No Arch Linux reinstalls – unless it is fully broken (e.g. does not boot), do not reinstall
+* No switching shells – do not move from shell to shell, stay on Quickshell
+* IMPORTANT: get consistant sleep (6 to 10 hours every night)
+
+
+
+
+
+= Layer 1 – Core shell (MUST HAVE, 1ST) =
+
+* Panel
+* Launcher
+* Notification Daemon
+* System Controls (sidebar, with notification center)
+
+
+
+== Layer 2 – Motion system ==
+
+* Animations
+* Transistions
+* Workspace feel
+
+
+
+Layer 3 – Aesthetics system* Material Design 3 design language ([https://m3.material.io/ https://m3.material.io/])
+* Matugen theming
+* icons/fonts
+
+
+
+= Design Tokens =
+
+=== Design Tokens (global constants) ===
+
+* spacing scale 
+* radius scale 
+* colors (from Matugen) 
+* typography 
+* animation durations 
+
+
+
+This becomes the '''single source of truth for consistency''', instead of scattering rules across components. Design Tokens are the '''only allowed variables that define design values'''. They follow naming:* <tt>token_spacing_*</tt> 
+* <tt>token_radius_*</tt> 
+* <tt>token_typography_*</tt> 
+* <tt>token_motion_*</tt>
+
+
+
+Design tokens must NOT contain runtime state.
+
+= Event system =
+
+* Modules communicate via events or shared state.
+* Events are one-way broadcasts (no direct coupling) 
+
+* Events must be named and documented (no anonymous signals)
+* Events must not contain UI logic or behavior decisions.
+
+
+
+= Dependency rules =
+
+Services: can be used by everything, does not depend on anything
+
+Modules: can be used by nothing, depends on Components, Services
+
+Components: can be used by everything, can depend on Components, depends on Design Tokens
+
+Design Tokens: can be used by everything, does not depend on anything
+
+Assets: can be used by everything, does not depend on anything (fonts, images)
+
+No upward dependencies (Components must never depend on Modules)
+
+= Component Rules =
+
+== 1.1 Definition rule ==
+
+A component is valid if:
+
+it is reusable in at least '''two different''' modules without modification
+
+if it only exists within '''one '''modules, it is NOT a component – it is local UI.
+
+== 1.2 No logic ==
+
+Components do not contain:* system state management
+* workspace logic
+* session logic
+* external process handling
+
+
+
+They are '''dumb'''. Logic belongs in modules and services.
+
+== 1.3 Token-only styling ==
+
+All styling must come from a shared design system:* spacing scale
+* radius scale
+* color roles
+* typeography scale
+
+
+
+No hardcoded magic values per component, only design tokens.
+
+== 1.4 Composition ==
+
+Components must be built from other components whenever possible.
+
+== 1.5 Single responsibility ==
+
+Each component does one of:* display content
+* accept input
+* structure layout
+
+
+
+Not multiple.
+
+== 1.6 No assumptions ==
+
+Components must NOT assume they are in:* a panel
+* a launcher
+* a popup
+
+
+
+They must be context free.
+
+== 1.7 Stability lock ==
+
+Once a component exists, changes must be versioned, but not entirely rewritten. Components may be replaced if they violate system constraints or block module completion.
+
+= 2 Module rules =
+
+== 2.1 Module ownership rule ==
+
+Each module owns:* its own layout 
+* its own state 
+* its own behavior logic 
+
+
+
+Modules can use components, but never define global UI rules.
+
+== 2.2 Component-only UI rule ==
+
+Modules must ONLY be built from components. No raw UI primitives inside modules, only reusable components. If a module needs something new → create a component first. Modules can only depend on services and components, not other modules.
+
+== 2.3 No cross-module coupling rule ==
+
+Modules must NOT directly depend on each other.
+
+Example:* Bar does not control Launcher 
+* Launcher does not modify Notifications 
+
+
+
+Communication must go through:* shared state layer OR 
+* event system OR 
+* system signals 
+
+
+
+But NOT direct calls.
+
+== 2.4 Module isolation rule ==
+
+Each module should be removable without breaking the rest of the system. If removing Launcher breaks Bar → architecture is wrong.
+
+== 2.5 Minimal responsibility rule ==
+
+Each module must do ONE job:
+
+Examples:* Bar → show system state + workspace control 
+* Launcher → app search + launch 
+* Notifications → display + manage notification queue 
+* Session → logout/reboot/suspend 
+
+
+
+No feature creep inside modules.
+
+== 2.6 No redesign inside module rule ==
+
+Modules are NOT allowed to:* redefine design system rules 
+* introduce new spacing systems 
+* override component styling conventions 
+
+
+
+They only assemble components.
+
+== 2.7 State locality rule ==
+
+State belongs in the smallest possible scope:* Component state → local UI state 
+* Module state → module-only logic 
+* Global state → only shared system info 
+
+
+
+No “everything is global because it’s easier” shortcuts.
+
+= Variables =
+
+Variables must be used when ever possible. Variables are only allowed for: spacing, radius, color tokens, typography scale, animation timing.
+
+= Services =
+
+Services are always Singletons and do not produce '''ANY '''UI. They expose variables and functions. Services may not depend on UI components or modules (one-way dependency only).
+
+= V1 Completion =
+
+* All Layer 1 modules exist 
+* No module requires new components to function 
+* System can be daily-driven for 7 days without architectural changes 
+* Only Layer 2/3 adjustments are allowed (motion + aesthetics)
+
+
