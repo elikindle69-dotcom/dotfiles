@@ -15,14 +15,31 @@ Hyprland Wayland rice with a custom [Quickshell](https://quickshell.outfoxxed.me
 ## Repository Structure
 
 ```
-config/
-├── hypr/           Hyprland config + hyprlock
-├── kitty/          Terminal config
-├── mpd/            Music Player Daemon
-├── ncmpcpp/        NCurses MPD client
-├── qt6/            Qt6 global settings
-├── qt6ct/          Qt6ct style + color palette
-└── quickshell/     Custom desktop shell (QML)
+.
+├── bin/                          Custom scripts
+│   ├── screenshot                Region capture via grim+slurp
+│   ├── updatempd                 Batch tag MP3s + mpc update
+│   └── ytrip                     YouTube audio downloader (yt-dlp)
+├── config/
+│   ├── hypr/                     Hyprland config + hyprlock
+│   ├── kitty/                    Terminal config
+│   ├── mpd/                      Music Player Daemon
+│   ├── ncmpcpp/                  NCurses MPD client
+│   ├── qt6/                      Qt6 global settings
+│   ├── qt6ct/                    Qt6ct style + color palette
+│   ├── quickshell/               Custom desktop shell (QML)
+│   ├── scripts/                  Color generation scripts
+│   │   ├── generate_colors.py    Matugen color pipeline entrypoint
+│   │   ├── switch_wallpaper.py   Wallpaper switcher with color regen
+│   │   └── templates/            GTK CSS templates (Jinja2)
+│   └── home/                     Shell config (deploy to ~/)
+│       ├── .zshrc                Zsh config (oh-my-zsh + p10k)
+│       ├── .p10k.zsh             Powerlevel10k prompt config
+│       ├── .fzf.zsh              Fzf integration
+│       └── .oh-my-zsh/           Oh-my-zsh + plugins + themes
+├── guidelines.txt                Architectural rules for the shell
+├── LICENSE                       MIT
+└── README.md
 ```
 
 ## Quickshell Desktop Shell
@@ -136,6 +153,25 @@ Super (CapsLock remapped) is the main modifier.
 | `Print` | Screenshot |
 | `XF86Audio*` | Volume +/−/mute, mic mute, media controls |
 | `XF86MonBrightness*` | Brightness +/− |
+
+## Scripts
+
+| Script | Description |
+|---|---|
+| `bin/screenshot` | Region capture with grim+slurp, saves to `~/Pictures/Screenshots/` with notification |
+| `bin/updatempd` | Batch retags MP3s using eyeD3 (title/artist from filename) then runs `mpc update` |
+| `bin/ytrip` | YouTube audio downloader — `ytrip search "<query>"` or `ytrip download <url>`, outputs MP3 to `~/Music` |
+| `config/scripts/generate_colors.py` | Matugen color pipeline — generates GTK, Kitty, Qt6ct, and Mako color configs from wallpaper |
+| `config/scripts/switch_wallpaper.py` | Wallpaper switcher that triggers color regeneration |
+
+## Shell Setup
+
+Zsh configuration lives in `config/home/` and deploys to `~/`:
+
+- **Oh-My-Zsh** with Powerlevel10k theme
+- **Plugins**: git, sudo, colored-man-pages, fzf, zsh-autosuggestions, zsh-syntax-highlighting
+- **Editor**: vim
+- **Fzf** integration via `.fzf.zsh`
 
 ## License
 

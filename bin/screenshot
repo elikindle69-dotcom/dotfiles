@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -uo pipefail
+
+dir="$HOME/Pictures/Screenshots"
+mkdir -p "$dir"
+
+if ! geom="$(slurp 2>/dev/null)"; then
+    exit 0
+fi
+
+file="$dir/$(date +'%Y-%m-%d_%H-%M-%S')_screenshot.png"
+
+if grim -g "$geom" -t png -l 4 "$file"; then
+    notify-send \
+        -a Screenshot \
+        -i "$file" \
+        "Screenshot taken" \
+        "$file"
+fi

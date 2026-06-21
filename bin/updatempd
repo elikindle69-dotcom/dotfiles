@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/Music
+
+for f in *.mp3; do
+    base="${f%.mp3}"
+    title="${base% - *}"
+    artist="${base##* - }"
+
+    eyeD3 --title "$title" --artist "$artist" "$f"
+done
+
+mpc update

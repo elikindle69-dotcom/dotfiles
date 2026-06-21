@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+
+import sys
+import yt_dlp
+from pathlib import Path
+
+
+def parse_args(argv):
+    """
+    Very small CLI parser:
+    ytrip <command> <args...> [--to path]
+    """
+    if len(argv) < 3:
+        return None, None, None
+
+    command = argv[1]
+
+    # default output directory
+    output_dir = str(Path("~/Music").expanduser())
+
+    # check for --to
+    if "--to" in argv:
+        idx = argv.index("--to")
+        if idx + 1 < len(argv):
+            output_dir = argv[idx + 1]
+            # remove --to and its value from args
+            argv = argv[:idx] + argv[idx + 2 :]
+
+    if command == "search":
+        query = " ".join(argv[2:])
+        return command, query, output_dir
+
+    if command == "download":
+        url = argv[2]
+        return command, url, output_dir
+
+    return command, None, output_dir
+
+
+def search(query, limit=10):
+    ydl_opts = {
+        "quiet": True,
+        "skip_download": True,
+        "extract_flat": True,
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(f"ytsearch{limit}:{query}", download=False)
+
+    results = info.get("entries", [])
+
+    if not results:
+        print("No results found.")
+        return
+
+    print("\nSearch results:\n")
+    for i, r in enumerate(results):
+        title = r.get("title", "Unknown")
+        vid = r.get("id", "")
+        url = f"https://www.youtube.com/watch?v={vid}"
+        print(f"{i + 1}. {title}")
+        print(f"   {url}")
+
+
+def download(url, output_dir):
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+    ydl_opts = {
+        "format": "bestaudio/best",
+        "outtmpl": f"{output_dir}/%(title)s.%(ext)s",
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            }
+        ],
+        "quiet": False,
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+
+def print_usage():
+    print("""
+Usage:
+  ytrip search "<query>" [--to path]
+  ytrip download <url> [--to path]
+
+Defaults:
+  --to ~/Music
+""")
+
+
+def main():
+    command, arg, output_dir = parse_args(sys.argv)
+
+    if not command or not arg:
+        print_usage()
+        return
+
+    if command == "search":
+        search(arg)
+
+    elif command == "download":
+        print(f"Downloading to: {output_dir}")
+        download(arg, output_dir)
+
+    else:
+        print("Unknown command:", command)
+        print_usage()
+
+
+if __name__ == "__main__":
+    main()
