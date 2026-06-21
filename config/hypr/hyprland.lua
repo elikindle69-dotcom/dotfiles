@@ -60,6 +60,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("quickshell")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("hyprpolkitagent")
+  hl.exec_cmd("protonvpn-app")
 end)
 
 -------------------------------
@@ -281,6 +282,18 @@ hl.window_rule({
     },
 
     no_focus = true,
+})
+
+hl.window_rule({
+    match = {
+        class = "proton.vpn.app.gtk",
+    },
+    workspace = "10"
+})
+
+hl.workspace_rule({
+    workspace = "10",
+    default_name = "󰖂"
 })
 
 hl.layer_rule({ match = { namespace = "notifications" }, "blur"})

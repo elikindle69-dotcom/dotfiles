@@ -100,7 +100,7 @@ PanelWindow {
         switch (selected_index) {
         case 0: _do_action(["loginctl", "lock-session"]); break
         case 1: _do_action(["systemctl", "suspend"]); break
-        case 2: _do_action(["hyprctl", "dispatch", "exit"]); break
+        case 2: _do_action(["hyprctl", "dispatch", "hl.dsp.exit()"]); break
         case 3: _do_action(["systemctl", "reboot"]); break
         case 4: _do_action(["systemctl", "poweroff"]); break
         case 5: power_menu_root.visible = false; break

@@ -58,7 +58,7 @@ Item {
 
                     Text {
                         anchors.centerIn: parent
-                        text: modelData.id
+                        text: modelData.name
                         font: token_typography_body
                         color: is_active
                             ? services.MatugenService.on_primary

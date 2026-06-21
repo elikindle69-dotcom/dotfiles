@@ -1,0 +1,358 @@
+
+[1m── Preflight ──[0m
+  [[32m OK [0m] AUR helper: yay
+  [[32m OK [0m] Manifest: 8 config dirs, 3 home files, 1 home dirs
+[INSTALL] 
+[INSTALL] This will install your dotfiles:
+[INSTALL]   Config dirs: hypr kitty mpd ncmpcpp qt6 qt6ct quickshell scripts
+[INSTALL]   Home files:  .zshrc .p10k.zsh .fzf.zsh
+[INSTALL]   Home dirs:   .oh-my-zsh
+[INSTALL]   Backup:      /home/eli/.dotfiles-backup/20260621_090544
+[INSTALL] 
+
+[1m── Install dependencies ──[0m
+[INSTALL] Installing core packages...
+ -> hyprland-git-0.55.3.r103.g68e3e40-1 is up to date -- skipping
+ -> quickshell-git-0.3.0.r7.gd99d87d-1 is up to date -- skipping
+Sync Dependency (4): python-3.14.5-1, jq-1.8.1-3, xdg-desktop-portal-1.22.0-1, python-jinja-1:3.1.6-3
+Sync Explicit (17): grim-1.5.0-2, wl-clipboard-1:2.3.0-1, matugen-4.1.0-1, qt6ct-0.11-7, pipewire-pulse-1:1.6.6-1, zsh-5.9.1-1, ttf-jetbrains-mono-nerd-3.4.0-2, xdg-desktop-portal-hyprland-1.3.12-2, pipewire-1:1.6.6-1, fzf-0.72.0-1, awww-0.12.1-1, brightnessctl-0.5.1-3, wireplumber-0.5.14-1, ttf-roboto-3.015-1, slurp-1.5.0-2, playerctl-2.4.1-5, kitty-0.47.1-1
+warning: kitty-0.47.1-1 is up to date -- skipping
+warning: brightnessctl-0.5.1-3 is up to date -- skipping
+warning: xdg-desktop-portal-1.22.0-1 is up to date -- skipping
+warning: awww-0.12.1-1 is up to date -- skipping
+warning: pipewire-pulse-1:1.6.6-1 is up to date -- skipping
+warning: matugen-4.1.0-1 is up to date -- skipping
+warning: wl-clipboard-1:2.3.0-1 is up to date -- skipping
+warning: fzf-0.72.0-1 is up to date -- skipping
+warning: python-jinja-1:3.1.6-3 is up to date -- skipping
+warning: zsh-5.9.1-1 is up to date -- skipping
+warning: slurp-1.5.0-2 is up to date -- skipping
+warning: wireplumber-0.5.14-1 is up to date -- skipping
+warning: grim-1.5.0-2 is up to date -- skipping
+warning: pipewire-1:1.6.6-1 is up to date -- skipping
+warning: python-3.14.5-1 is up to date -- skipping
+warning: xdg-desktop-portal-hyprland-1.3.12-2 is up to date -- skipping
+warning: jq-1.8.1-3 is up to date -- skipping
+warning: playerctl-2.4.1-5 is up to date -- skipping
+warning: ttf-jetbrains-mono-nerd-3.4.0-2 is up to date -- skipping
+warning: qt6ct-0.11-7 is up to date -- skipping
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) ttf-roboto-3.015-1
+
+Total Download Size:   2.73 MiB
+Total Installed Size:  8.98 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ ttf-roboto-3.015-1-any downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+installing ttf-roboto...
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Updating fontconfig cache...
+  [[32m OK [0m] Core packages installed
+[INSTALL] Installing optional packages...
+ -> python-eyed3-0.9.9-1 is up to date -- skipping
+Sync Explicit (5): mpc-0.35-2, yt-dlp-2026.06.09-1, mpd-0.24.12-1, dolphin-26.04.2-1, ncmpcpp-0.10.1-8
+Sync Dependency (3): libnotify-0.8.8-1, glib2-2.88.1-1, qt6-wayland-6.11.1-1
+AUR Explicit (1): hyprpolkitagent-git-0.1.3.r4.g713b7ea-1
+AUR Dependency (1): hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1
+:: [1m(1/2) Downloaded PKGBUILD: hyprland-qt-support-git[0m
+:: [1m(2/2) Downloaded PKGBUILD: hyprpolkitagent-git[0m
+  2 hyprland-qt-support-git                  (Build Files Exist)
+  1 hyprpolkitagent-git                      (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+  2 hyprpolkitagent-git                      (Build Files Exist)
+  1 hyprland-qt-support-git                  (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+==> Making package: hyprpolkitagent-git 0.1.3.r4.g713b7ea-1 (Sun 21 Jun 2026 09:06:20 AM CDT)
+==> Retrieving sources...
+  -> Cloning hyprpolkitagent git repo...
+Cloning into bare repository '/home/eli/.cache/yay/hyprpolkitagent-git/hyprpolkitagent'...
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    hyprpolkitagent ... Skipped
+==> Making package: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:06:23 AM CDT)
+==> Retrieving sources...
+  -> Cloning hyprland-qt-support git repo...
+Cloning into bare repository '/home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support'...
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    hyprland-qt-support ... Skipped
+:: [1m(1/2) Parsing SRCINFO: hyprpolkitagent-git[0m
+:: [1m(2/2) Parsing SRCINFO: hyprland-qt-support-git[0m
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) qt6-wayland-6.11.1-1
+
+Total Download Size:   0.79 MiB
+Total Installed Size:  4.95 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ qt6-wayland-6.11.1-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+installing qt6-wayland...
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Querying Quickshell compatibility after Qt6 update...
+==> Making package: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:06:28 AM CDT)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating hyprland-qt-support git repo...
+==> Validating source files with sha256sums...
+    hyprland-qt-support ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of hyprland-qt-support git repo...
+Cloning into 'hyprland-qt-support'...
+done.
+==> Starting pkgver()...
+==> Sources are ready.
+==> Making package: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:06:32 AM CDT)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Starting build()...
+-- The CXX compiler identification is GNU 16.1.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- QML install dir: /usr//lib/qt6/qml
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so
+-- Found WrapOpenGL: TRUE
+-- Found WrapVulkanHeaders: /usr/include
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- Checking for module 'hyprlang>=0.6.0'
+--   Found hyprlang, version 0.6.8
+-- Configuring done (2.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/eli/.cache/yay/hyprland-qt-support-git/src/build
+[1/51] Copying hyprland-quick-style-impl qml resources into build dir
+[2/51] Copying hyprland-quick-style qml sources into build dir
+[3/51] Copying hyprland-quick-style qml resources into build dir
+[4/51] Copying hyprland-quick-style-impl qml sources into build dir
+[5/51] Populating .qmlls.ini file at /home/eli/.cache/yay/hyprland-qt-support-git/src/build/.qt/.qmlls.build.ini
+[6/51] Automatic MOC and UIC for target hyprland-quick-style-impl
+[7/51] Running AUTOMOC file extraction for target hyprland-quick-style-impl
+[8/51] Running rcc for resource qmake_org_hyprland_style_impl
+[9/51] Running rcc for resource hyprland-quick-style-impl_raw_qml_0
+[10/51] Generating .rcc/qmlcache/hyprland-quick-style-impl_qmlcache_loader.cpp
+[11/51] Running moc --collect-json for target hyprland-quick-style-impl
+[12/51] Automatic QML type registration for target hyprland-quick-style-impl
+[13/51] Generating .rcc/qmlcache/hyprland-quick-style-impl_HyprlandStyle_qml.cpp, .rcc/qmlcache/hyprland-quick-style-impl_HyprlandStyle_qml.cpp.aotstats
+[14/51] Generating .rcc/qmlcache/hyprland-quick-style-impl_MotionBehavior_qml.cpp, .rcc/qmlcache/hyprland-quick-style-impl_MotionBehavior_qml.cpp.aotstats
+[15/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/.qt/rcc/qrc_hyprland-quick-style-impl_raw_qml_0.cpp.o
+[16/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/.qt/rcc/qrc_qmake_org_hyprland_style_impl.cpp.o
+[17/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/.rcc/qmlcache/hyprland-quick-style-impl_qmlcache_loader.cpp.o
+[18/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/.rcc/qmlcache/hyprland-quick-style-impl_MotionBehavior_qml.cpp.o
+[19/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/.rcc/qmlcache/hyprland-quick-style-impl_HyprlandStyle_qml.cpp.o
+[20/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/hyprlandstyle.cpp.o
+[21/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/hyprland-quick-style-impl_qmltyperegistrations.cpp.o
+[22/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/hyprland-quick-style-impl_autogen/mocs_compilation.cpp.o
+[23/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-impl.dir/checkdelegate.cpp.o
+[24/51] Linking CXX shared library src/style/impl/libhyprland-quick-style-impl.so
+[25/51] Automatic MOC and UIC for target hyprland-quick-style
+[26/51] Running AUTOMOC file extraction for target hyprland-quick-style
+[27/51] Running moc --collect-json for target hyprland-quick-style
+[28/51] Running rcc for resource qmake_org_hyprland_style
+[29/51] Running rcc for resource hyprland-quick-style_raw_qml_0
+[30/51] Generating .rcc/qmlcache/hyprland-quick-style_qmlcache_loader.cpp
+[31/51] Automatic QML type registration for target hyprland-quick-style
+[32/51] Generating .rcc/qmlcache/hyprland-quick-style_CheckBox_qml.cpp, .rcc/qmlcache/hyprland-quick-style_CheckBox_qml.cpp.aotstats
+[33/51] Generating .rcc/qmlcache/hyprland-quick-style_Button_qml.cpp, .rcc/qmlcache/hyprland-quick-style_Button_qml.cpp.aotstats
+[34/51] Generating .rcc/qmlcache/hyprland-quick-style_TextField_qml.cpp, .rcc/qmlcache/hyprland-quick-style_TextField_qml.cpp.aotstats
+[35/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/hyprland-quick-style_autogen/mocs_compilation.cpp.o
+[36/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.qt/rcc/qrc_hyprland-quick-style_raw_qml_0.cpp.o
+[37/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.qt/rcc/qrc_qmake_org_hyprland_style.cpp.o
+[38/51] Automatic MOC and UIC for target hyprland-quick-style-implplugin
+[39/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-implplugin.dir/hyprland-quick-style-implplugin_autogen/mocs_compilation.cpp.o
+[40/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/hyprland-quick-style_qmltyperegistrations.cpp.o
+[41/51] Building CXX object src/style/impl/CMakeFiles/hyprland-quick-style-implplugin.dir/hyprland-quick-style-implplugin_org_hyprland_style_implPlugin.cpp.o
+[42/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.rcc/qmlcache/hyprland-quick-style_TextField_qml.cpp.o
+[43/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.rcc/qmlcache/hyprland-quick-style_CheckBox_qml.cpp.o
+[44/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.rcc/qmlcache/hyprland-quick-style_Button_qml.cpp.o
+[45/51] Linking CXX shared module qml/org/hyprland/style/impl/libhyprland-quick-style-implplugin.so
+[46/51] Building CXX object src/style/CMakeFiles/hyprland-quick-style.dir/.rcc/qmlcache/hyprland-quick-style_qmlcache_loader.cpp.o
+[47/51] Linking CXX shared library src/style/libhyprland-quick-style.so
+[48/51] Automatic MOC and UIC for target hyprland-quick-styleplugin
+[49/51] Building CXX object src/style/CMakeFiles/hyprland-quick-styleplugin.dir/hyprland-quick-styleplugin_autogen/mocs_compilation.cpp.o
+[50/51] Building CXX object src/style/CMakeFiles/hyprland-quick-styleplugin.dir/plugin.cpp.o
+[51/51] Linking CXX shared module qml/org/hyprland/style/libhyprland-quick-styleplugin.so
+==> Entering fakeroot environment...
+==> Starting package()...
+-- Install configuration: "None"
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/libhyprland-quick-style-impl.so
+-- Set non-toolchain portion of runtime path of "/home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/libhyprland-quick-style-impl.so" to "$ORIGIN:$ORIGIN/../usr/lib"
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/libhyprland-quick-style-implplugin.so
+-- Set non-toolchain portion of runtime path of "/home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/libhyprland-quick-style-implplugin.so" to "$ORIGIN:$ORIGIN/../usr/lib"
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/qmldir
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/hyprland-quick-style-impl.qmltypes
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/HyprlandStyle.qml
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/impl/MotionBehavior.qml
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/libhyprland-quick-style.so
+-- Set non-toolchain portion of runtime path of "/home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/libhyprland-quick-style.so" to "$ORIGIN:$ORIGIN/../usr/lib"
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/libhyprland-quick-styleplugin.so
+-- Set non-toolchain portion of runtime path of "/home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/libhyprland-quick-styleplugin.so" to "$ORIGIN:$ORIGIN/../usr/lib"
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/qmldir
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/hyprland-quick-style.qmltypes
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/Button.qml
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/CheckBox.qml
+-- Installing: /home/eli/.cache/yay/hyprland-qt-support-git/pkg/hyprland-qt-support-git/usr/lib/qt6/qml/org/hyprland/style/TextField.qml
+==> Tidying install...
+  -> Removing libtool files...
+  -> Removing static library files...
+  -> Purging unwanted files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "hyprland-qt-support-git"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Creating package "hyprland-qt-support-git-debug"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:07:18 AM CDT)
+==> Cleaning up...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+:: hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1 and hyprland-qt-support-0.1.0-12 are in conflict. Remove hyprland-qt-support? [y/N] error: unresolvable package conflicts detected
+error: failed to prepare transaction (conflicting dependencies)
+
+:: hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1 and hyprland-qt-support-0.1.0-12 are in conflict
+ -> Failed to install layer, rolling up to next layer.error:error installing: [/home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst /home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-debug-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst] - exit status 1
+warning: mpd-0.24.12-1 is up to date -- skipping
+warning: libnotify-0.8.8-1 is up to date -- skipping
+warning: glib2-2.88.1-1 is up to date -- skipping
+warning: mpc-0.35-2 is up to date -- skipping
+warning: dolphin-26.04.2-1 is up to date -- skipping
+warning: yt-dlp-2026.06.09-1 is up to date -- skipping
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) ncmpcpp-0.10.1-8
+
+Total Download Size:   0.78 MiB
+Total Installed Size:  2.61 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ ncmpcpp-0.10.1-8-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+installing ncmpcpp...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+==> Making package: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:07:23 AM CDT)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating hyprland-qt-support git repo...
+==> Validating source files with sha256sums...
+    hyprland-qt-support ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of hyprland-qt-support git repo...
+Cloning into 'hyprland-qt-support'...
+done.
+==> Starting pkgver()...
+==> Sources are ready.
+ -> hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1 already made -- skipping build
+==> Making package: hyprland-qt-support-git 0.1.0.r10.g9ef7f69-1 (Sun 21 Jun 2026 09:07:27 AM CDT)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Sources are ready.
+==> Making package: hyprpolkitagent-git 0.1.3.r4.g713b7ea-1 (Sun 21 Jun 2026 09:07:29 AM CDT)
+==> Checking runtime dependencies...
+==> Missing dependencies:
+  -> hyprland-qt-support-git
+==> ERROR: Could not resolve all dependencies.
+ -> error making: hyprpolkitagent-git-exit status 8
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+:: hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1 and hyprland-qt-support-0.1.0-12 are in conflict. Remove hyprland-qt-support? [y/N] error: unresolvable package conflicts detected
+error: failed to prepare transaction (conflicting dependencies)
+
+:: hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1 and hyprland-qt-support-0.1.0-12 are in conflict
+ -> error installing: [/home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst /home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-debug-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst] - exit status 1
+error installing: [/home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst /home/eli/.cache/yay/hyprland-qt-support-git/hyprland-qt-support-git-debug-0.1.0.r10.g9ef7f69-1-x86_64.pkg.tar.zst] - exit status 1
+  [[33mWARN[0m] Some optional packages failed (non-fatal)
+
+[1m── Deploy home files ──[0m
+  [[32m OK [0m] Installed: .zshrc → ~/
+  [[32m OK [0m] Installed: .p10k.zsh → ~/
+  [[32m OK [0m] Installed: .fzf.zsh → ~/
+  [[32m OK [0m] Installed: .oh-my-zsh/ → ~/
+
+[1m── Deploy config directories ──[0m
+  [[32m OK [0m] Installed: hypr/ → ~/.config/
+  [[32m OK [0m] Backed up: .config/kitty
+  [[32m OK [0m] Installed: kitty/ → ~/.config/
+  [[32m OK [0m] Installed: mpd/ → ~/.config/
+  [[32m OK [0m] Installed: ncmpcpp/ → ~/.config/
+  [[32m OK [0m] Installed: qt6/ → ~/.config/
+  [[32m OK [0m] Installed: qt6ct/ → ~/.config/
+  [[32m OK [0m] Installed: quickshell/ → ~/.config/
+  [[32m OK [0m] Installed: scripts/ → ~/.config/
+
+[1m── Deploy scripts ──[0m
+  [[32m OK [0m] Installed: bin/screenshot
+  [[32m OK [0m] Installed: bin/updatempd
+  [[32m OK [0m] Installed: bin/ytrip
+  [[33mWARN[0m] Stale script: ~/.local/bin/netorbit (not in repo)
+  [[33mWARN[0m] Stale script: ~/.local/bin/paseo (not in repo)
+
+[1m── Post-install ──[0m
+fc-cache: succeeded
+  [[32m OK [0m] Font cache updated
+[INSTALL] 
+[INSTALL] === Summary ===
+[INSTALL]   Config dirs: 8
+[INSTALL]   Home files:  3
+[INSTALL]   Home dirs:   1
+[INSTALL]   Backup:      /home/eli/.dotfiles-backup/20260621_090544
+[INSTALL] 
+[INSTALL] To apply changes:
+[INSTALL]   1. Log out and back in (or exec zsh)
+[INSTALL]   2. hyprctl reload  (if Hyprland is running)
+[INSTALL]   3. Open a new terminal for shell changes

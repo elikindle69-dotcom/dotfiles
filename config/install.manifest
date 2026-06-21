@@ -1,0 +1,24 @@
+# Install Manifest
+# Maps config/<dir> → ~/.config/<dir>
+# One directory per line. Only listed directories are installed.
+# Add new dirs here when expanding the rice.
+
+config_dirs:
+  - hypr
+  - kitty
+  - mpd
+  - ncmpcpp
+  - qt6
+  - qt6ct
+  - quickshell
+  - scripts
+
+# Files in config/home/ → ~/
+home_files:
+  - .zshrc
+  - .p10k.zsh
+  - .fzf.zsh
+
+# Directories in config/home/ → ~/  (recursive copy)
+home_dirs:
+  - .oh-my-zsh

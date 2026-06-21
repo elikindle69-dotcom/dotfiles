@@ -38,8 +38,8 @@ ShellRoot {
     readonly property int token_radius_lg: 16
     readonly property int token_radius_full: 999 
 
-    readonly property var token_typography_font_head: "Roboto"
-    readonly property var token_typography_font: "Roboto"
+    readonly property var token_typography_font_head: "NotoSans Nerd Font"
+    readonly property var token_typography_font: "NotoSans Nerd Font"
     readonly property var token_typography_icon_font: material_symbols_font.font.family
     readonly property font token_typography_display: Qt.font({ family: token_typography_font_head, pointSize: 45, weight: Font.Medium })
     readonly property font token_typography_headline: Qt.font({ family: token_typography_font_head, pointSize: 24, weight: Font.Medium })
