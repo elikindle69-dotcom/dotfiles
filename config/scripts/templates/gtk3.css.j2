@@ -1,0 +1,403 @@
+/* Generated automatically from ~/.theme.json */
+
+@define-color bg_color {{ bg }};
+@define-color fg_color {{ fg }};
+@define-color base_color {{ base }};
+@define-color text_color {{ fg }};
+@define-color selected_bg_color {{ sel_bg }};
+@define-color selected_fg_color {{ sel_fg }};
+@define-color link_color {{ color["primary"] }};
+@define-color success_color {{ success_color }};
+@define-color warning_color {{ color["tertiary"] }};
+@define-color error_color {{ color["error"] }};
+@define-color tooltip_bg_color {{ tooltip_bg }};
+@define-color tooltip_fg_color {{ fg }};
+@define-color insensitive_bg_color {{ color["surface_container_highest"] }};
+@define-color insensitive_fg_color {{ rgba(fg, OP_INACTIVE) }};
+@define-color backdrop_fg_color {{ rgba(fg, OP_DIM) }};
+
+/* ---- Base ---- */
+* {
+    -GtkButton-child-displacement-x: 1px;
+    -GtkButton-child-displacement-y: 1px;
+    -GtkTreeView-vertical-separator: 0;
+}
+
+window,
+.background {
+    background-color: {{ bg }};
+    color: {{ fg }};
+    padding: 8px;
+}
+
+/* ---- Buttons ---- */
+button {
+    background-image: none;
+    background-color: {{ color["surface_container_high"] }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 8px;
+    padding: 8px 16px;
+    min-height: 24px;
+    margin: 2px;
+}
+
+button:hover {
+    background-color: {{ color["surface_container_highest"] }};
+}
+
+button:active,
+button:checked {
+    background-color: {{ sel_bg }};
+    color: {{ sel_fg }};
+    border-color: {{ sel_bg }};
+}
+
+button:disabled {
+    color: {{ rgba(fg, OP_INACTIVE) }};
+    background-color: {{ color["surface_container"] }};
+    border-color: {{ border }};
+}
+
+/* ---- Entries ---- */
+entry {
+    background-color: {{ base }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-height: 24px;
+    margin: 2px;
+}
+
+entry:focus {
+    border-color: {{ sel_bg }};
+}
+
+entry:disabled {
+    background-color: {{ color["surface_container_highest"] }};
+    color: {{ rgba(fg, OP_INACTIVE) }};
+}
+
+/* ---- Headerbar ---- */
+headerbar {
+    background-color: {{ headerbar_bg }};
+    color: {{ fg }};
+    border-bottom: 1px solid {{ border }};
+    padding: 6px 12px;
+    min-height: 32px;
+}
+
+headerbar button {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 2px;
+}
+
+headerbar button:hover {
+    background-color: {{ color["surface_container_high"] }};
+}
+
+/* ---- Menus / Context Menus ---- */
+menu,
+.menu,
+.context-menu {
+    background-color: {{ menu_bg }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 12px;
+    padding: 8px 0px;
+}
+
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+    padding: 8px 24px;
+    min-height: 28px;
+}
+
+menu menuitem:hover,
+.menu menuitem:hover,
+.context-menu menuitem:hover {
+    background-color: {{ rgba(sel_bg, OP_BORDER) }};
+    color: {{ fg }};
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+menu menuitem:disabled,
+.menu menuitem:disabled {
+    color: {{ rgba(fg, OP_INACTIVE) }};
+}
+
+menu separator,
+.menu separator {
+    background-color: {{ border }};
+    min-height: 1px;
+    margin: 6px 12px;
+}
+
+/* ---- Popovers ---- */
+popover,
+popover.background {
+    background-color: {{ menu_bg }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 12px;
+    padding: 8px 0px;
+}
+
+popover modelbutton {
+    padding: 8px 24px;
+    min-height: 28px;
+    border-radius: 0px;
+    margin: 0px 8px;
+}
+
+popover modelbutton:hover {
+    background-color: {{ rgba(sel_bg, OP_BORDER) }};
+}
+
+popover separator {
+    background-color: {{ border }};
+    min-height: 1px;
+    margin: 6px 12px;
+}
+
+/* ---- Notebook / Tabs ---- */
+notebook > header {
+    background-color: {{ headerbar_bg }};
+    border: none;
+}
+
+notebook > header > tabs > tab {
+    padding: 8px 16px;
+    min-height: 28px;
+    color: {{ rgba(fg, OP_DIM) }};
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin: 0px 2px;
+}
+
+notebook > header > tabs > tab:checked {
+    color: {{ sel_bg }};
+    border-bottom-color: {{ sel_bg }};
+}
+
+notebook > header > tabs > tab:hover {
+    color: {{ fg }};
+}
+
+notebook > header > tabs {
+    background-color: {{ headerbar_bg }};
+}
+
+notebook > header > tabs > tab {
+    background-color: transparent;
+}
+
+notebook {
+    background-color: {{ bg }};
+}
+
+notebook > header {
+    padding: 4px 8px 0px 8px;
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    background-color: transparent;
+    border: none;
+    margin: 4px;
+}
+
+scrollbar slider {
+    background-color: {{ rgba(fg, OP_MEDIUM) }};
+    border-radius: 10px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: {{ rgba(fg, OP_DEFAULT) }};
+}
+
+/* ---- Scale / Slider ---- */
+scale trough {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 4px;
+    min-height: 6px;
+    margin: 8px 0px;
+}
+
+scale highlight {
+    background-color: {{ sel_bg }};
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+scale slider {
+    background-color: {{ sel_bg }};
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    border: none;
+    margin: -7px;
+}
+
+scale slider:hover {
+    background-color: {{ color["primary_fixed_dim"] }};
+}
+
+/* ---- Switch ---- */
+switch {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 14px;
+    min-width: 44px;
+    min-height: 24px;
+    border: none;
+    margin: 4px;
+}
+
+switch:checked {
+    background-color: {{ sel_bg }};
+}
+
+switch slider {
+    background-color: white;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 2px;
+}
+
+/* ---- Check / Radio ---- */
+check,
+radio {
+    background-color: {{ base }};
+    border: 2px solid {{ rgba(fg, OP_BORDER_FOCUS) }};
+    border-radius: 4px;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 2px;
+    margin: 4px;
+}
+
+radio {
+    border-radius: 50%;
+}
+
+check:checked,
+radio:checked {
+    background-color: {{ sel_bg }};
+    color: {{ sel_fg }};
+    border-color: {{ sel_bg }};
+}
+
+check:disabled,
+radio:disabled {
+    background-color: {{ color["surface_container_highest"] }};
+    border-color: {{ rgba(fg, OP_BORDER) }};
+}
+
+/* ---- Tooltip ---- */
+tooltip {
+    background-color: {{ tooltip_bg }};
+    color: {{ fg }};
+    border-radius: 8px;
+    border: none;
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: {{ fg }};
+}
+
+/* ---- Sidebar ---- */
+sidebar {
+    background-color: {{ base }};
+    border-right: 1px solid {{ border }};
+    padding: 4px;
+}
+
+.sidebar label {
+    padding: 4px 8px;
+}
+
+/* ---- Lists / Rows ---- */
+list {
+    background-color: {{ bg }};
+    padding: 4px;
+}
+
+row {
+    padding: 8px 12px;
+    margin: 2px 0px;
+    border-radius: 8px;
+}
+
+row:hover {
+    background-color: {{ rgba(fg, OP_HOVER) }};
+}
+
+row:selected {
+    background-color: {{ rgba(sel_bg, OP_BORDER) }};
+    color: {{ fg }};
+}
+
+/* ---- Text View ---- */
+textview,
+textview text {
+    background-color: {{ base }};
+    color: {{ fg }};
+}
+
+textview text {
+    padding: 8px 12px;
+}
+
+/* ---- Label ---- */
+label {
+    color: {{ fg }};
+    padding: 2px;
+}
+
+/* ---- Separator ---- */
+separator {
+    background-color: {{ border }};
+    min-height: 1px;
+    min-width: 1px;
+    margin: 4px 0px;
+}
+
+/* ---- Spinner ---- */
+spinner {
+    color: {{ sel_bg }};
+}
+
+/* ---- Progress Bar ---- */
+progressbar trough {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 4px;
+    min-height: 6px;
+    margin: 4px 0px;
+}
+
+progress progress {
+    background-color: {{ sel_bg }};
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+/* ---- Backdrop (inactive window) ---- */
+.background:backdrop {
+    background-color: {{ bg }};
+    color: {{ rgba(fg, OP_DIM) }};
+}
+
+headerbar:backdrop {
+    background-color: {{ headerbar_bg }};
+    color: {{ rgba(fg, OP_DIM) }};
+}

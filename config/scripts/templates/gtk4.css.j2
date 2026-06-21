@@ -1,0 +1,484 @@
+/* Generated automatically from ~/.theme.json */
+
+@define-color accent_bg_color {{ sel_bg }};
+@define-color accent_fg_color {{ sel_fg }};
+@define-color accent_color {{ sel_bg }};
+
+@define-color window_bg_color {{ bg }};
+@define-color window_fg_color {{ fg }};
+
+@define-color view_bg_color {{ base }};
+@define-color view_fg_color {{ fg }};
+
+@define-color headerbar_bg_color {{ headerbar_bg }};
+@define-color headerbar_fg_color {{ fg }};
+
+@define-color card_bg_color {{ color["surface_container_high"] }};
+@define-color card_fg_color {{ fg }};
+
+@define-color dialog_bg_color {{ headerbar_bg }};
+@define-color dialog_fg_color {{ fg }};
+
+@define-color sidebar_bg_color {{ base }};
+@define-color sidebar_fg_color {{ fg }};
+
+@define-color destructive_color {{ color["error"] }};
+@define-color error_color {{ color["error"] }};
+@define-color warning_color {{ color["tertiary"] }};
+@define-color success_color {{ success_color }};
+
+@define-color error_bg_color @destructive_color;
+@define-color error_fg_color {{ color["on_error"] }};
+@define-color success_bg_color @success_color;
+@define-color success_fg_color {{ sel_fg }};
+@define-color warning_bg_color @warning_color;
+@define-color warning_fg_color {{ fg }};
+
+@define-color shade_color {{ rgba(color["scrim"], OP_MEDIUM) }};
+@define-color shaded_fg_color {{ rgba(fg, OP_DEFAULT) }};
+
+@define-color tooltip_bg_color {{ tooltip_bg }};
+@define-color tooltip_fg_color {{ fg }};
+
+@define-color switch_bg_color {{ rgba(color["outline"], OP_DEFAULT) }};
+@define-color switch_border_color {{ rgba(color["outline"], OP_BORDER_FOCUS) }};
+@define-color switch_selected_bg_color {{ sel_bg }};
+@define-color switch_selected_border_color {{ sel_bg }};
+
+/* ---- Base ---- */
+window.background,
+.background {
+    background-color: {{ bg }};
+    color: {{ fg }};
+    padding: 8px;
+}
+
+/* ---- Buttons ---- */
+button {
+    background-color: {{ color["surface_container_high"] }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 8px;
+    padding: 8px 16px;
+    min-height: 24px;
+    margin: 2px;
+}
+
+button:hover {
+    background-color: {{ color["surface_container_highest"] }};
+}
+
+button:active,
+button:checked {
+    background-color: {{ sel_bg }};
+    color: {{ sel_fg }};
+    border-color: {{ sel_bg }};
+}
+
+button:disabled {
+    color: {{ rgba(fg, OP_INACTIVE) }};
+    background-color: {{ color["surface_container"] }};
+    border-color: {{ border }};
+}
+
+button.suggested-action {
+    background-color: {{ sel_bg }};
+    color: {{ sel_fg }};
+    border-color: {{ sel_bg }};
+}
+
+button.destructive-action {
+    background-color: {{ color["error"] }};
+    color: {{ color["on_error"] }};
+    border-color: {{ color["error"] }};
+}
+
+button.flat {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+button.flat:hover {
+    background-color: {{ rgba(fg, OP_HOVER) }};
+}
+
+/* ---- Entries ---- */
+entry {
+    background-color: {{ base }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-height: 24px;
+    margin: 2px;
+}
+
+entry:focus {
+    border-color: {{ sel_bg }};
+}
+
+entry:disabled {
+    background-color: {{ color["surface_container_highest"] }};
+    color: {{ rgba(fg, OP_INACTIVE) }};
+}
+
+/* ---- Search Bar ---- */
+searchbar {
+    background-color: {{ headerbar_bg }};
+    border-bottom: 1px solid {{ border }};
+    padding: 6px 12px;
+}
+
+searchbar > revealer > box {
+    padding: 4px;
+}
+
+/* ---- Headerbar ---- */
+headerbar {
+    background-color: {{ headerbar_bg }};
+    color: {{ fg }};
+    border-bottom: 1px solid {{ border }};
+    padding: 6px 12px;
+    min-height: 32px;
+}
+
+headerbar button {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 2px;
+}
+
+headerbar button:hover {
+    background-color: {{ color["surface_container_high"] }};
+}
+
+/* ---- Popover / Menus ---- */
+popover.background,
+popover.background > contents {
+    background-color: {{ menu_bg }};
+    color: {{ fg }};
+    border: 1px solid {{ border }};
+    border-radius: 12px;
+    padding: 8px 0px;
+}
+
+popover modelbutton {
+    padding: 8px 24px;
+    min-height: 28px;
+    border-radius: 0px;
+    margin: 0px 8px;
+}
+
+popover modelbutton:hover {
+    background-color: {{ rgba(sel_bg, OP_BORDER) }};
+}
+
+popover separator {
+    background-color: {{ border }};
+    min-height: 1px;
+    margin: 6px 12px;
+}
+
+/* ---- Menu Bar ---- */
+menubar {
+    background-color: {{ headerbar_bg }};
+    color: {{ fg }};
+    border-bottom: 1px solid {{ border }};
+    padding: 0px 8px;
+}
+
+menubar > menuitem {
+    padding: 6px 12px;
+}
+
+menubar > menuitem:hover {
+    background-color: {{ rgba(fg, OP_HOVER) }};
+}
+
+/* ---- Notebook / Tabs ---- */
+notebook > header {
+    background-color: {{ headerbar_bg }};
+    border: none;
+    padding: 4px 8px 0px 8px;
+}
+
+notebook > header > tabs {
+    background-color: {{ headerbar_bg }};
+}
+
+notebook > header > tabs > tab {
+    padding: 8px 16px;
+    min-height: 28px;
+    color: {{ rgba(fg, OP_DIM) }};
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    margin: 0px 2px;
+}
+
+notebook > header > tabs > tab:checked {
+    color: {{ sel_bg }};
+    border-bottom-color: {{ sel_bg }};
+}
+
+notebook > header > tabs > tab:hover {
+    color: {{ fg }};
+}
+
+notebook {
+    background-color: {{ bg }};
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    background-color: transparent;
+    border: none;
+    margin: 4px;
+}
+
+scrollbar slider {
+    background-color: {{ rgba(fg, OP_MEDIUM) }};
+    border-radius: 10px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: {{ rgba(fg, OP_DEFAULT) }};
+}
+
+/* ---- Scale / Slider ---- */
+.scale trough {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 4px;
+    min-height: 6px;
+    margin: 8px 0px;
+}
+
+.scale highlight {
+    background-color: {{ sel_bg }};
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+.scale slider {
+    background-color: {{ sel_bg }};
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    border: none;
+    margin: -7px;
+}
+
+.scale slider:hover {
+    background-color: {{ color["primary_fixed_dim"] }};
+}
+
+/* ---- Switch ---- */
+switch {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 14px;
+    min-width: 44px;
+    min-height: 24px;
+    border: none;
+    margin: 4px;
+}
+
+switch:checked {
+    background-color: {{ sel_bg }};
+}
+
+switch slider {
+    background-color: white;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 2px;
+}
+
+/* ---- Check / Radio ---- */
+checkbutton check,
+checkbutton radio,
+check,
+radio {
+    background-color: {{ base }};
+    border: 2px solid {{ rgba(fg, OP_BORDER_FOCUS) }};
+    border-radius: 4px;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 2px;
+    margin: 4px;
+}
+
+radio,
+checkbutton radio {
+    border-radius: 50%;
+}
+
+checkbutton check:checked,
+checkbutton radio:checked,
+check:checked,
+radio:checked {
+    background-color: {{ sel_bg }};
+    color: {{ sel_fg }};
+    border-color: {{ sel_bg }};
+}
+
+checkbutton check:disabled,
+checkbutton radio:disabled,
+check:disabled,
+radio:disabled {
+    background-color: {{ color["surface_container_highest"] }};
+    border-color: {{ rgba(fg, OP_BORDER) }};
+}
+
+/* ---- Tooltip ---- */
+tooltip {
+    background-color: {{ tooltip_bg }};
+    color: {{ fg }};
+    border-radius: 8px;
+    border: none;
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: {{ fg }};
+}
+
+/* ---- Sidebar ---- */
+sidebar {
+    background-color: {{ base }};
+    border-right: 1px solid {{ border }};
+    padding: 4px;
+}
+
+.sidebar label {
+    padding: 4px 8px;
+}
+
+/* ---- Lists / Rows ---- */
+listview,
+list {
+    background-color: {{ bg }};
+    padding: 4px;
+}
+
+row {
+    padding: 8px 12px;
+    margin: 2px 0px;
+    border-radius: 8px;
+}
+
+row:hover {
+    background-color: {{ rgba(fg, OP_HOVER) }};
+}
+
+row:selected {
+    background-color: {{ rgba(sel_bg, OP_BORDER) }};
+    color: {{ fg }};
+}
+
+/* ---- Text View ---- */
+textview {
+    background-color: {{ base }};
+    color: {{ fg }};
+}
+
+textview text {
+    background-color: {{ base }};
+    color: {{ fg }};
+    padding: 8px 12px;
+}
+
+/* ---- Label ---- */
+label {
+    color: {{ fg }};
+    padding: 2px;
+}
+
+/* ---- Separator ---- */
+separator {
+    background-color: {{ border }};
+    min-height: 1px;
+    min-width: 1px;
+    margin: 4px 0px;
+}
+
+/* ---- Spinner ---- */
+spinner {
+    color: {{ sel_bg }};
+}
+
+/* ---- Progress Bar ---- */
+progressbar trough {
+    background-color: {{ rgba(fg, OP_SUBTLE) }};
+    border-radius: 4px;
+    min-height: 6px;
+    margin: 4px 0px;
+}
+
+progress progress {
+    background-color: {{ sel_bg }};
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+/* ---- Toolbar ---- */
+toolbar {
+    background-color: {{ headerbar_bg }};
+    border: none;
+    padding: 4px 8px;
+}
+
+toolbar button {
+    background-color: transparent;
+    border: none;
+    padding: 4px 8px;
+}
+
+toolbar button:hover {
+    background-color: {{ rgba(fg, OP_HOVER) }};
+}
+
+/* ---- Dialog ---- */
+dialog {
+    background-color: {{ bg }};
+}
+
+dialog .dialog-vbox {
+    margin: 12px;
+}
+
+dialog .dialog-action-box {
+    padding: 8px 12px;
+}
+
+/* ---- InfoBar ---- */
+infobar {
+    border: none;
+    border-radius: 0px;
+}
+
+infobar.info {
+    background-color: {{ rgba(color["tertiary"], OP_BORDER) }};
+    color: {{ fg }};
+}
+
+infobar.warning {
+    background-color: {{ rgba(color["tertiary"], OP_BORDER) }};
+    color: {{ fg }};
+}
+
+infobar.error {
+    background-color: {{ rgba(color["error"], OP_BORDER) }};
+    color: {{ fg }};
+}
+
+/* ---- Action Bar ---- */
+actionbar {
+    background-color: {{ headerbar_bg }};
+    border-top: 1px solid {{ border }};
+    padding: 6px 12px;
+}
