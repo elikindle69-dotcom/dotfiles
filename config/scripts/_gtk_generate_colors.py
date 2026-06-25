@@ -25,11 +25,8 @@ ButtonLayout=close,minimize,maximize:
 
 GTK3_SETTINGS = """\
 [Settings]
-gtk-application-prefer-dark-theme=true
 gtk-button-images=false
 gtk-menu-images=false
-gtk-primary-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
 """
 
 _jinja_env = jinja2.Environment(

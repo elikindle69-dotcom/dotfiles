@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "algorithm": "argon2id+xchacha20poly1305",
+  "kdf": {
+    "algorithm": "argon2id",
+    "iterations": 3,
+    "memory_cost": 65536,
+    "lanes": 4,
+    "salt": "GOO3drdotkBHlt/buw1SZQ=="
+  },
+  "verifier": "pw8ZuRtWJdlCs/IvJTx6NsOJbMqF7/IdSTu5a1m74sE="
+}

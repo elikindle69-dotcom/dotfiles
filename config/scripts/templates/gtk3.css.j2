@@ -17,22 +17,14 @@
 @define-color backdrop_fg_color {{ rgba(fg, OP_DIM) }};
 
 /* ---- Base ---- */
-* {
-    -GtkButton-child-displacement-x: 1px;
-    -GtkButton-child-displacement-y: 1px;
-    -GtkTreeView-vertical-separator: 0;
-}
-
 window,
 .background {
     background-color: {{ bg }};
     color: {{ fg }};
-    padding: 8px;
 }
 
 /* ---- Buttons ---- */
 button {
-    background-image: none;
     background-color: {{ color["surface_container_high"] }};
     color: {{ fg }};
     border: 1px solid {{ border }};

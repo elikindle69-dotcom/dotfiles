@@ -35,7 +35,7 @@ def generate_kitty(theme: c.ThemeData) -> str:
         return c.get_color(colors, name, mode)
 
     def _get_base16(base_name: str) -> str:
-        node = base16[base_name]
+        node = base16[base_name.lower()]
         return node["default"]["color"]
 
     lines = [

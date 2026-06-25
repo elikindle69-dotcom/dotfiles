@@ -244,6 +244,9 @@ hl.workspace_rule({ workspace = "10", layout = "dwindle" })
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
+hl.bind(mainMod .. " + Z",         hl.dsp.workspace.toggle_special("discord"))
+hl.bind(mainMod .. " + X",         hl.dsp.workspace.toggle_special("media"))
+
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -289,6 +292,13 @@ hl.window_rule({
         class = "proton.vpn.app.gtk",
     },
     workspace = "10"
+})
+
+hl.window_rule({
+    match = {
+        class = "vesktop",
+    },
+    workspace = "special:discord"
 })
 
 hl.workspace_rule({

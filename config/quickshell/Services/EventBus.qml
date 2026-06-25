@@ -8,4 +8,7 @@ Singleton {
 
     signal sidebarToggled(bool visible)
     signal launcherToggled(bool visible)
+    signal passwordManagerToggled(bool visible)
+    signal vaultUnlocked()
+    signal vaultLocked()
 }

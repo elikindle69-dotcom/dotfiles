@@ -12,6 +12,7 @@ import "./Modules/Osd" as Osd
 import "./Modules/Notifications" as Notifications
 import "./Modules/PowerMenu" as PowerMenu
 import "./Modules/Screenshot" as Screenshot
+import "./Modules/PasswordManager" as PasswordManager
 import "./Services" as Services
 import "./Components" as Components
 
@@ -72,4 +73,5 @@ ShellRoot {
     Notifications.Main { id: notifications }
     PowerMenu.Main     { id: power_menu }
     Screenshot.Main    { id: screenshot }
+    PasswordManager.Main { id: password_manager }
 }
