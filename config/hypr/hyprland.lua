@@ -51,6 +51,7 @@ local screenshot  = "sh -c '$HOME/.local/bin/screenshot'"
 local menu        = "qs ipc call launcher toggle"
 local sidebar     = "qs ipc call sidebar toggle"
 local powermenu   = "qs ipc call powermenu toggle"
+local scrcpy      = "scrcpy -w --keyboard=uhid --require-audio --audio-source=output"
 
 -------------------
 ---- AUTOSTART ----
@@ -221,6 +222,7 @@ hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + A",      hl.dsp.exec_cmd(sidebar))
 hl.bind(mainMod .. " + P",      hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J",      hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + C",      hl.dsp.exec_cmd(scrcpy))
 hl.bind(mainMod .. " + tab",    switch_layout)
 
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

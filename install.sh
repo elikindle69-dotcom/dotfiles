@@ -333,6 +333,8 @@ install_deps() {
 	# Other utilites
 	proton-vpn-cli
 	proton-vpn-gtk-app
+	scrcpy
+	firefox
     )
 
     local OPTIONAL_PKGS=(
